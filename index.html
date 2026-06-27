@@ -1,0 +1,472 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AMP LIVE - Premium Football Streaming Platform">
+    <meta name="keywords" content="Football, Live, Streaming, World Cup, AMP LIVE">
+    <meta name="author" content="AMP LIVE">
+
+    <title>AMP LIVE | Home</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Home CSS -->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+<!-- ==========================================================
+     POPUP
+=========================================================== -->
+
+<div class="popup-overlay" id="popupOverlay">
+
+    <div class="popup">
+
+        <h2>Welcome to AMP LIVE</h2>
+
+        <p>
+            Join our WhatsApp community to receive match updates,
+            streaming notifications and important announcements.
+        </p>
+
+        <div class="popup-buttons">
+
+            <a
+                href="https://chat.whatsapp.com/JPj6VATmC1TLdunL4VisOs"
+                target="_blank"
+                class="popup-btn group-btn">
+
+                Join WhatsApp Group
+
+            </a>
+
+            <a
+                href="https://whatsapp.com/channel/0029Vb8UrZcE50Uo1ylsQP2w"
+                target="_blank"
+                class="popup-btn channel-btn">
+
+                Join WhatsApp Channel
+
+            </a>
+
+            <button
+                id="popupClose"
+                class="popup-btn joined-btn">
+
+                Already Joined
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================================
+     HEADER
+=========================================================== -->
+
+<header class="header">
+
+    <div class="container header-container">
+
+        <a href="index.html" class="logo">
+
+            AMP LIVE
+
+        </a>
+
+        <nav class="navbar" id="navbar">
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="index.html" class="active">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="index.html">
+
+                        World Cup
+
+                    </a>
+
+                </li>
+
+                <li class="dropdown">
+
+                    <button class="dropdown-toggle">
+
+                        About
+
+                    </button>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+
+                            <a href="404.html">
+
+                                About Us
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="404.html">
+
+                                Community
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="404.html">
+
+                                Contact
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="disclaimer.html">
+
+                                Disclaimer
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                aria-label="Toggle Theme">
+
+                🌙
+
+            </button>
+
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                aria-label="Open Menu">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ==========================================================
+     MAIN
+=========================================================== -->
+
+<main>
+
+    <section class="hero">
+
+        <div class="container">
+
+            <h1 class="page-title">
+
+                AMP LIVE
+
+            </h1>
+
+            <p class="page-subtitle">
+
+                Watch football matches with multiple live stream options.
+
+            </p>
+
+            <div class="community-buttons">
+
+                <a
+                    href="https://chat.whatsapp.com/JPj6VATmC1TLdunL4VisOs"
+                    target="_blank"
+                    class="community-btn group">
+
+                    WhatsApp Group
+
+                </a>
+
+                <a
+                    href="https://whatsapp.com/channel/0029Vb8UrZcE50Uo1ylsQP2w"
+                    target="_blank"
+                    class="community-btn channel">
+
+                    WhatsApp Channel
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================
+         DATE SELECTOR
+    ======================================================= -->
+
+    <section class="date-selector-section">
+
+        <div class="container">
+
+            <div class="date-selector">
+
+                <button
+                    class="date-btn"
+                    data-day="yesterday">
+
+                    Yesterday
+
+                </button>
+
+                <button
+                    class="date-btn active"
+                    data-day="today">
+
+                    Today
+
+                </button>
+
+                <button
+                    class="date-btn"
+                    data-day="tomorrow">
+
+                    Tomorrow
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================================
+         MATCH LIST
+    ======================================================= -->
+
+    <section class="matches-section">
+
+        <div class="container">
+
+            <div id="matchesContainer" class="matches-container">
+                ```html
+                <!-- Match Card (Template - Will be generated dynamically later) -->
+
+                <a href="match.html" class="match-card">
+
+                    <div class="accent-bar"></div>
+
+                    <div class="match-content">
+
+                        <!-- Left Team -->
+
+                        <div class="team team-left">
+
+                            <img
+                                src="images/team-placeholder.png"
+                                alt="Team 1 Logo"
+                                class="team-logo">
+
+                            <span class="team-name">
+
+                                Team One
+
+                            </span>
+
+                        </div>
+
+                        <!-- Center -->
+
+                        <div class="match-center">
+
+                            <div class="match-time">
+
+                                20:00
+
+                            </div>
+
+                            <span class="status-badge live">
+
+                                LIVE
+
+                            </span>
+
+                        </div>
+
+                        <!-- Right Team -->
+
+                        <div class="team team-right">
+
+                            <img
+                                src="images/team-placeholder.png"
+                                alt="Team 2 Logo"
+                                class="team-logo">
+
+                            <span class="team-name">
+
+                                Team Two
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="match-footer">
+
+                        <span class="competition">
+
+                            FIFA World Cup 2026
+
+                        </span>
+
+                        <span class="separator">
+
+                            •
+
+                        </span>
+
+                        <span class="brand">
+
+                            AMP LIVE
+
+                        </span>
+
+                        <span class="separator">
+
+                            •
+
+                        </span>
+
+                        <span class="group">
+
+                            Group A
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <!-- End Match Card -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- ==========================================================
+     FOOTER
+=========================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-container">
+
+        <div class="footer-links">
+
+            <a href="disclaimer.html">
+
+                Disclaimer
+
+            </a>
+
+            <a
+                href="https://chat.whatsapp.com/JPj6VATmC1TLdunL4VisOs"
+                target="_blank">
+
+                WhatsApp Group
+
+            </a>
+
+            <a
+                href="https://whatsapp.com/channel/0029Vb8UrZcE50Uo1ylsQP2w"
+                target="_blank">
+
+                WhatsApp Channel
+
+            </a>
+
+        </div>
+
+        <div class="footer-info">
+
+            <span>
+
+                © 2026 AMP LIVE
+
+            </span>
+
+            <span>
+
+                Version 1.0.0
+
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ==========================================================
+     JAVASCRIPT
+=========================================================== -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="js/app.js"></script>
+<script src="js/home.js"></script>
+
+</body>
+</html>
+```
+
+```
