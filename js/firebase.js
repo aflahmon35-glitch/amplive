@@ -5,12 +5,12 @@
 
 // Your Firebase config (copy from console)
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyChTxJYk92E7_SptJrSz57xQ2MA2d_sAJw",
+    authDomain: "amplive-2d1ad.firebaseapp.com",
+    projectId: "amplive-2d1ad",
+    storageBucket: "amplive-2d1ad.firebasestorage.app",
+    messagingSenderId: "742405124371",
+    appId: "1:742405124371:web:601c3a3f6b498f3868eae6"
 };
 
 // Initialize Firebase
