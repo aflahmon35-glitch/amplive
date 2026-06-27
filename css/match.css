@@ -1,0 +1,245 @@
+/* =========================================================
+   AMP LIVE - MATCH CSS (Part 1)
+   Match Details Page Styling
+========================================================= */
+
+/* -------------------------
+   MATCH DETAILS WRAPPER
+------------------------- */
+
+.match-details {
+    padding: 40px 0;
+}
+
+/* -------------------------
+   MATCH HEADER (TEAMS)
+------------------------- */
+
+.match-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.team-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    text-align: center;
+}
+
+.team-logo-large {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.team-block h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.vs {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* -------------------------
+   MATCH INFO BOX
+------------------------- */
+
+.match-info {
+    background: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.match-info p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.match-info strong {
+    color: var(--primary);
+}
+
+/* =========================================================
+   AMP LIVE - MATCH CSS (Part 2)
+   Broadcasters + Lineups + Streams
+========================================================= */
+
+/* -------------------------
+   BROADCASTERS
+------------------------- */
+
+.broadcasters {
+    background: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.broadcasters h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.broadcasters table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.broadcasters td {
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .broadcasters td {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* -------------------------
+   LINEUPS
+------------------------- */
+
+.lineups {
+    background: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.lineups h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* -------------------------
+   STREAM BUTTONS
+------------------------- */
+
+.streams {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.stream-btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.25s;
+}
+
+.stream-btn:hover {
+    transform: translateY(-2px);
+    color: var(--primary);
+}
+
+.stream-btn.special {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* =========================================================
+   AMP LIVE - MATCH CSS (Part 3)
+   Responsive + Mobile + Final Polish
+========================================================= */
+
+/* -------------------------
+   RESPONSIVE (TABLET)
+------------------------- */
+
+@media (max-width: 1024px) {
+
+    .match-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .team-block {
+        width: 100%;
+    }
+
+    .streams {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* -------------------------
+   RESPONSIVE (MOBILE)
+------------------------- */
+
+@media (max-width: 600px) {
+
+    .match-details {
+        padding: 25px 0;
+    }
+
+    .match-header {
+        padding: 18px;
+    }
+
+    .team-logo-large {
+        width: 55px;
+        height: 55px;
+    }
+
+    .vs {
+        font-size: 18px;
+    }
+
+    .streams {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .stream-btn {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .match-info p {
+        font-size: 13px;
+    }
+}
+
+/* -------------------------
+   DARK MODE FIXES
+------------------------- */
+
+[data-theme="dark"] .match-header,
+[data-theme="dark"] .match-info,
+[data-theme="dark"] .broadcasters,
+[data-theme="dark"] .lineups {
+    background: var(--card);
+}
+
+/* -------------------------
+   FINAL TOUCH
+------------------------- */
+
+.stream-btn:active {
+    transform: scale(0.98);
+}

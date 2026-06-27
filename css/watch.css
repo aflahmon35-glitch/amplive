@@ -1,0 +1,123 @@
+/* =========================================================
+   AMP LIVE - WATCH CSS (Part 1)
+   Video Player Page Styling
+========================================================= */
+
+/* -------------------------
+   WATCH SECTION
+------------------------- */
+
+.watch-section {
+    padding: 40px 0;
+}
+
+/* -------------------------
+   PLAYER WRAPPER
+------------------------- */
+
+.player-wrapper {
+    width: 100%;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* Video player */
+
+.video-player {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+/* -------------------------
+   PLAYER CONTROLS
+------------------------- */
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+
+.control-btn {
+    padding: 10px 16px;
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.25s ease;
+    color: var(--text);
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    color: var(--primary);
+}
+
+/* =========================================================
+   AMP LIVE - WATCH CSS (Part 2)
+   Responsive + Dark Mode + Final Polish
+========================================================= */
+
+/* -------------------------
+   RESPONSIVE
+------------------------- */
+
+@media (max-width: 1024px) {
+
+    .video-player {
+        height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .video-player {
+        height: 320px;
+    }
+
+    .player-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .control-btn {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .video-player {
+        height: 240px;
+    }
+
+    .watch-section {
+        padding: 25px 0;
+    }
+}
+
+/* -------------------------
+   DARK MODE FIXES
+------------------------- */
+
+[data-theme="dark"] .player-wrapper {
+    background: var(--card);
+}
+
+/* -------------------------
+   ACTIVE FEEDBACK
+------------------------- */
+
+.control-btn:active {
+    transform: scale(0.98);
+}
+

@@ -1,0 +1,186 @@
+/* =========================================================
+   AMP LIVE - HOME CSS (Part 1)
+   Home Page Specific Styling
+========================================================= */
+
+/* -------------------------
+   HERO SECTION TWEAKS
+------------------------- */
+
+.hero {
+    padding: 60px 0 40px 0;
+}
+
+.page-title {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.page-subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+/* -------------------------
+   COMMUNITY BUTTON WRAPPER
+------------------------- */
+
+.community-buttons {
+    margin-top: 25px;
+}
+
+/* improve spacing on home only */
+
+.community-btn {
+    min-width: 160px;
+    text-align: center;
+}
+
+/* -------------------------
+   DATE SELECTOR SECTION
+------------------------- */
+
+.date-selector-section {
+    margin-top: 20px;
+}
+
+.date-selector {
+    padding: 10px 0;
+}
+
+/* -------------------------
+   MATCH SECTION HOME LAYOUT
+------------------------- */
+
+.matches-section {
+    padding-top: 10px;
+}
+
+/* tighter spacing for home feed */
+
+.matches-container {
+    gap: 12px;
+}
+
+/* -------------------------
+   HOME MATCH CARD POLISH
+   (ONLY VISUAL ENHANCEMENTS)
+------------------------- */
+
+.match-card {
+    position: relative;
+    border-left: 6px solid var(--primary);
+}
+
+/* remove accent-bar conflict from JS template */
+
+.accent-bar {
+    display: none;
+}
+
+/* improve hover feel on home */
+
+.match-card:hover {
+    transform: translateY(-4px);
+}
+
+/* -------------------------
+   DESKTOP OPTIMIZATION
+------------------------- */
+
+@media (min-width: 1100px) {
+
+    .hero .container {
+        text-align: center;
+    }
+
+    .matches-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+/* =========================================================
+   AMP LIVE - HOME CSS (Part 2)
+   Responsive + Final Home Page Polish
+========================================================= */
+
+/* -------------------------
+   TABLET ADJUSTMENTS
+------------------------- */
+
+@media (max-width: 1024px) {
+
+    .page-title {
+        font-size: 36px;
+    }
+
+    .hero {
+        padding: 50px 0 30px 0;
+    }
+}
+
+/* -------------------------
+   MOBILE ADJUSTMENTS
+------------------------- */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 40px 0 25px 0;
+    }
+
+    .page-title {
+        font-size: 30px;
+    }
+
+    .page-subtitle {
+        font-size: 14px;
+    }
+
+    .community-btn {
+        width: 100%;
+    }
+
+    .date-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .date-btn {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+/* -------------------------
+   SMALL MOBILE
+------------------------- */
+
+@media (max-width: 480px) {
+
+    .page-title {
+        font-size: 26px;
+    }
+
+    .matches-container {
+        gap: 10px;
+    }
+
+    .community-btn {
+        font-size: 13px;
+        padding: 9px 14px;
+    }
+}
+
+/* -------------------------
+   FINAL CLEANUP TOUCH
+------------------------- */
+
+.hero,
+.matches-section,
+.date-selector-section {
+    transition: all 0.3s ease;
+}

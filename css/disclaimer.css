@@ -1,0 +1,79 @@
+/* =========================================================
+   AMP LIVE - DISCLAIMER CSS (Part 1)
+   Simple Legal Page Styling
+========================================================= */
+
+/* -------------------------
+   DISCLAIMER SECTION
+------------------------- */
+
+.disclaimer-section {
+    padding: 50px 0;
+}
+
+/* -------------------------
+   DISCLAIMER BOX
+------------------------- */
+
+.disclaimer-box {
+    background: var(--card);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    line-height: 1.7;
+}
+
+/* Title */
+
+.disclaimer-box h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+/* Paragraphs */
+
+.disclaimer-box p {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 15px;
+}
+/* =========================================================
+   AMP LIVE - DISCLAIMER CSS (Part 2)
+   Responsive + Dark Mode + Final Polish
+========================================================= */
+
+/* -------------------------
+   RESPONSIVE
+------------------------- */
+
+@media (max-width: 768px) {
+
+    .disclaimer-box {
+        padding: 20px;
+    }
+
+    .disclaimer-box h1 {
+        font-size: 22px;
+    }
+
+    .disclaimer-box p {
+        font-size: 13px;
+    }
+}
+
+/* -------------------------
+   DARK MODE FIX
+------------------------- */
+
+[data-theme="dark"] .disclaimer-box {
+    background: var(--card);
+}
+
+/* -------------------------
+   FINAL TOUCH
+------------------------- */
+
+.disclaimer-box {
+    transition: all 0.3s ease;
+}
