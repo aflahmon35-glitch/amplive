@@ -39,12 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const matchesContainer = document.getElementById("matchesContainer");
 
-    /* -------------------------
-       TEMP STATIC MATCH DATA (PLACEHOLDER)
-       Later will come from Firebase
-    ------------------------- */
 
-   
+
+       /* -------------------------
+       LOAD MATCHES FUNCTION
+    ------------------------- */
 
 async function loadMatches(day) {
 
@@ -110,65 +109,9 @@ async function loadMatches(day) {
     }
 }
 
-    /* -------------------------
-       LOAD MATCHES FUNCTION
-    ------------------------- */
 
-    function loadMatches(day) {
 
-        if (!matchesContainer) return;
-
-        matchesContainer.innerHTML = "";
-
-        const matches = sampleMatches[day] || [];
-
-        if (matches.length === 0) {
-            matchesContainer.innerHTML = "<p style='text-align:center;color:gray;'>No matches available</p>";
-            return;
-        }
-
-        matches.forEach(match => {
-
-            const card = document.createElement("a");
-            card.href = "match.html";
-            card.className = "match-card";
-
-            card.innerHTML = `
-                <div class="accent-bar"></div>
-
-                <div class="match-content">
-
-                    <div class="team team-left">
-                        <img src="images/team-placeholder.png" class="team-logo">
-                        <span class="team-name">${match.teamA}</span>
-                    </div>
-
-                    <div class="match-center">
-                        <div class="match-time">${match.time}</div>
-                        <span class="status-badge">${match.status}</span>
-                    </div>
-
-                    <div class="team team-right">
-                        <img src="images/team-placeholder.png" class="team-logo">
-                        <span class="team-name">${match.teamB}</span>
-                    </div>
-
-                </div>
-
-                <div class="match-footer">
-                    <span class="competition">${match.competition}</span>
-                    <span>•</span>
-                    <span class="brand">AMP LIVE</span>
-                    <span>•</span>
-                    <span class="group">${match.group}</span>
-                </div>
-            `;
-
-            matchesContainer.appendChild(card);
-
-        });
-
-    }
+   
 
     /* -------------------------
        INITIAL LOAD
