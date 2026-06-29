@@ -76,7 +76,7 @@ async function loadMatches(day) {
                 <div class="match-content">
 
                     <div class="team">
-                        <img src="images/flags/${FLAG_MAP[match.teamA]}" class="team-logo" alt="${match.teamA}">
+                        <img src="${getFlag(match.teamA)}" class="team-logo" alt="${match.teamA}">
                         <span>${match.teamA}</span>
                     </div>
 
@@ -86,7 +86,7 @@ async function loadMatches(day) {
                     </div>
 
                     <div class="team">
-                        <img src="images/flags/${FLAG_MAP[match.teamB]}" class="team-logo" alt="${match.teamB}">
+                        <img src="${getFlag(match.teamB)}" class="team-logo" alt="${match.teamB}">
                         <span>${match.teamB}</span>
                     </div>
 
