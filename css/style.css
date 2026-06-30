@@ -429,6 +429,15 @@ body {
     font-weight:600;
 }
 
+.team-name.winner{
+    font-weight:700;
+    color:var(--text);
+}
+
+.team-name.loser{
+    opacity:0.7;
+}
+
 .match-time{
     font-size:18px;
     font-weight:700;
