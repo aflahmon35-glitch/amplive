@@ -393,9 +393,9 @@ body {
 
 .match-content{
     display:grid;
-    grid-template-columns:1fr 90px 1fr;
+    grid-template-columns:1fr 120px 1fr;
     align-items:center;
-    gap:18px;
+    gap:16px;
     padding:18px;
 }
 
@@ -403,20 +403,16 @@ body {
 
 .team{
     display:flex;
-    flex-direction:row;
     align-items:center;
     gap:10px;
-    flex:1;
-    min-width:0;
 }
 
 .team-left{
-    justify-content:flex-start;
+    justify-content:flex-end;
 }
 
 .team-right{
-    justify-content:flex-end;
-    flex-direction:row-reverse;
+    justify-content:flex-start;
 }
 
 .team-logo {
@@ -436,11 +432,10 @@ body {
 /* Center */
 
 .match-center{
-    width:90px;
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
 }
 
@@ -465,14 +460,22 @@ body {
 
 /* Footer */
 
-.match-footer {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    font-size: 11px;
-    color: var(--muted);
-    padding: 10px 15px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+.match-footer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+
+    padding:10px 15px;
+
+    font-size:12px;
+    font-weight:500;
+    color:var(--muted);
+
+    text-align:center;
+
+    border-top:1px solid rgba(0,0,0,0.05);
 }
 
 /* =========================================================
@@ -563,7 +566,6 @@ body {
 
     .team-right{
         justify-content:flex-end;
-        flex-direction:row-reverse;
     }
 
     .match-center{
