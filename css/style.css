@@ -435,16 +435,39 @@ body {
 }
 
 .status-badge{
+    display:inline-block;
     margin-top:6px;
-    padding:4px 12px;
+    padding:4px 10px;
     border-radius:20px;
     font-size:12px;
     font-weight:600;
+    color:#fff;
+    background:#888;   /* Default (UPCOMING) */
 }
 
-.status-badge.live {
-    background: red;
-    color: #fff;
+/* LIVE */
+.status-badge.live{
+    background:#e53935;
+}
+
+/* HALF TIME */
+.status-badge.ht{
+    background:#1976d2;
+}
+
+/* EXTRA TIME */
+.status-badge.et{
+    background:#fb8c00;
+}
+
+/* PENALTIES */
+.status-badge.pen{
+    background:#fb8c00;
+}
+
+/* FULL TIME */
+.status-badge.ft{
+    background:#424242;
 }
 
 .match-score{
