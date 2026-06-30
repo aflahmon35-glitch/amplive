@@ -25,19 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log("Selected Day:", selectedDay);
 
-            function formatTime(time24) {
-
-    const [hour, minute] = time24.split(":");
-
-    let h = parseInt(hour, 10);
-
-    const ampm = h >= 12 ? "PM" : "AM";
-
-    h = h % 12;
-    if (h === 0) h = 12;
-
-    return `${h}:${minute} ${ampm}`;
-}
+         
 
             // later: fetch matches based on selectedDay
             loadMatches(selectedDay);
@@ -52,6 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const matchesContainer = document.getElementById("matchesContainer");
 
+
+
+       /* -------------------------
+       LOAD MATCHES FUNCTION
+    ------------------------- */
+   function formatTime(time24) {
+
+    const [hour, minute] = time24.split(":");
+
+    let h = parseInt(hour, 10);
+
+    const ampm = h >= 12 ? "PM" : "AM";
+
+    h = h % 12;
+    if (h === 0) h = 12;
+
+    return `${h}:${minute} ${ampm}`;
+}
 
        /* -------------------------
        LOAD MATCHES FUNCTION
@@ -121,7 +127,7 @@ async function loadMatches(day) {
     </div>
 
     <div class="match-center">
-        <div class="match-time">${match.time}</div>
+        <div class="match-time">${formatTime(match.time)}</div>
         <span class="status-badge ${match.status.toLowerCase()}">${match.status}</span>
     </div>
 
