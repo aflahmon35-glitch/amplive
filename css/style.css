@@ -391,28 +391,23 @@ body {
 
 /* Match content layout */
 
-.match-content{
-    display:grid;
-    grid-template-columns:1fr 120px 1fr;
-    align-items:center;
-    gap:16px;
-    padding:18px;
+.match-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    position: relative;
 }
 
 /* Teams */
 
-.team{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.team-left{
-    justify-content:flex-end;
-}
-
-.team-right{
-    justify-content:flex-start;
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    text-align: center;
 }
 
 .team-logo {
@@ -431,12 +426,10 @@ body {
 
 /* Center */
 
-.match-center{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+.match-center {
+    width: 90px;
+    flex-shrink: 0;
+    text-align: center;
 }
 
 .match-time {
@@ -460,22 +453,14 @@ body {
 
 /* Footer */
 
-.match-footer{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:8px;
-
-    padding:10px 15px;
-
-    font-size:12px;
-    font-weight:500;
-    color:var(--muted);
-
-    text-align:center;
-
-    border-top:1px solid rgba(0,0,0,0.05);
+.match-footer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    padding: 10px 15px;
+    border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 /* =========================================================
@@ -541,48 +526,36 @@ body {
    TABLET ADJUSTMENTS
 ------------------------- */
 
-@media (max-width:1024px){
+@media (max-width: 1024px) {
 
-    .match-content{
-        display:grid;
-        grid-template-columns:1fr 90px 1fr;
-        align-items:center;
-        gap:14px;
-        padding:16px;
+    .container {
+        width: 85%;
     }
 
-    .team{
-        display:flex;
-        flex-direction:row;
-        align-items:center;
-        gap:10px;
-        flex:1;
-        min-width:0;
+    .page-title {
+        font-size: 34px;
     }
 
-    .team-left{
-        justify-content:flex-start;
+    .match-content {
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .team-right{
-        justify-content:flex-end;
+    .team {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
     }
 
-    .match-center{
-        width:90px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
+    .match-center {
+        width: 100%;
     }
 
-    .match-footer{
-        justify-content:center;
-        flex-wrap:wrap;
-        text-align:center;
+    .match-footer {
+        flex-wrap: wrap;
+        text-align: center;
     }
-
 }
 
 /* -------------------------
@@ -840,3 +813,7 @@ body {
     }
 
 }
+
+
+
+thsi is thje coded in css.style.  need 
