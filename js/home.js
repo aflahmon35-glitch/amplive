@@ -73,32 +73,31 @@ async function loadMatches(day) {
             card.className = "match-card";
 
             card.innerHTML = `
-                <div class="match-content">
+<div class="match-content">
 
-                  <div class="team team-left">
-    <img src="${getFlag(match.teamA)}" class="team-logo" alt="${match.teamA}">
-    <span class="team-name">${match.teamA}</span>
+    <div class="team team-left">
+        <img src="${getFlag(match.teamA)}" class="team-logo" alt="${match.teamA}">
+        <span class="team-name">${match.teamA}</span>
+    </div>
+
+    <div class="match-center">
+        <div class="match-time">${match.time}</div>
+        <span class="status-badge ${match.status.toLowerCase()}">${match.status}</span>
+    </div>
+
+    <div class="team team-right">
+        <img src="${getFlag(match.teamB)}" class="team-logo" alt="${match.teamB}">
+        <span class="team-name">${match.teamB}</span>
+    </div>
+
 </div>
-
-<div class="match-center">
-    <div class="match-time">${match.time}</div>
-    <span class="status-badge ${match.status.toLowerCase()}">${match.status}</span>
-</div>
-
-<div class="team team-right">
-    <img src="${getFlag(match.teamB)}" class="team-logo" alt="${match.teamB}">
-    <span class="team-name">${match.teamB}</span>
-</div>
-
-...
 
 <div class="match-footer">
     <span>${match.competition}</span>
     <span>•</span>
     <span>${match.group}</span>
 </div>
-            `;
-
+`;
             container.appendChild(card);
         });
 
