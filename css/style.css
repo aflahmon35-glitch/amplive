@@ -646,14 +646,17 @@ body {
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
+    text-align: center;
 }
 
 .footer-links {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
     flex-wrap: wrap;
 }
@@ -669,10 +672,12 @@ body {
 }
 
 .footer-info {
-    font-size: 12px;
-    color: var(--muted);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
+    text-align: center;
 }
 
 /* -------------------------
