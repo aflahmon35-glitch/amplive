@@ -391,22 +391,32 @@ body {
 
 /* Match content layout */
 
-.match-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px;
-    position: relative;
+.match-content{
+    display:grid;
+    grid-template-columns:1fr 90px 1fr;
+    align-items:center;
+    gap:18px;
+    padding:18px;
 }
 
 /* Teams */
 
-.team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    text-align: center;
+.team{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:10px;
+    flex:1;
+    min-width:0;
+}
+
+.team-left{
+    justify-content:flex-start;
+}
+
+.team-right{
+    justify-content:flex-end;
+    flex-direction:row-reverse;
 }
 
 .team-logo {
@@ -418,14 +428,20 @@ body {
 
 .team-name {
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
+    line-height: 1.25;
+    word-break: break-word;
 }
 
 /* Center */
 
-.match-center {
-    width: 40%;
-    text-align: center;
+.match-center{
+    width:90px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
 .match-time {
@@ -522,36 +538,49 @@ body {
    TABLET ADJUSTMENTS
 ------------------------- */
 
-@media (max-width: 1024px) {
+@media (max-width:1024px){
 
-    .container {
-        width: 85%;
+    .match-content{
+        display:grid;
+        grid-template-columns:1fr 90px 1fr;
+        align-items:center;
+        gap:14px;
+        padding:16px;
     }
 
-    .page-title {
-        font-size: 34px;
+    .team{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        gap:10px;
+        flex:1;
+        min-width:0;
     }
 
-    .match-content {
-        flex-direction: column;
-        gap: 12px;
+    .team-left{
+        justify-content:flex-start;
     }
 
-    .team {
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
+    .team-right{
+        justify-content:flex-end;
+        flex-direction:row-reverse;
     }
 
-    .match-center {
-        width: 100%;
+    .match-center{
+        width:90px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
     }
 
-    .match-footer {
-        flex-wrap: wrap;
-        text-align: center;
+    .match-footer{
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
     }
+
 }
 
 /* -------------------------
@@ -752,4 +781,60 @@ body {
     .team-name {
         font-size: 12px;
     }
+}
+
+/* ==========================================
+   MATCH CARD RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .match-content{
+        padding:14px;
+    }
+
+    .team-logo{
+        width:34px;
+        height:34px;
+    }
+
+    .team-name{
+        font-size:12px;
+    }
+
+    .match-time{
+        font-size:16px;
+    }
+
+    .status-badge{
+        font-size:10px;
+        padding:3px 8px;
+    }
+
+    .match-footer{
+        font-size:10px;
+        gap:6px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .match-content{
+        padding:12px;
+    }
+
+    .team-logo{
+        width:30px;
+        height:30px;
+    }
+
+    .team-name{
+        font-size:11px;
+    }
+
+    .match-time{
+        font-size:15px;
+    }
+
 }
