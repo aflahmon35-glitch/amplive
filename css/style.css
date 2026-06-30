@@ -507,6 +507,12 @@ body {
     border-top:1px solid rgba(0,0,0,0.05);
 }
 
+.competition{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    font-weight:600;
+}
 /* =========================================================
    AMP LIVE - GLOBAL STYLE (Part 3)
    Mobile Responsiveness + Header + Footer
