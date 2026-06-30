@@ -119,12 +119,35 @@ async function loadMatches(day) {
             card.href = `match.html?id=${match.id}`;
             card.className = "match-card";
 
+            let teamAClass = "";
+let teamBClass = "";
+
+if (match.score && match.score.includes("-")) {
+
+    const [a, b] = match.score.split("-").map(Number);
+
+    if (!isNaN(a) && !isNaN(b)) {
+
+        if (a > b) {
+            teamAClass = "winner";
+            teamBClass = "loser";
+        }
+
+        else if (b > a) {
+            teamBClass = "winner";
+            teamAClass = "loser";
+        }
+
+    }
+
+}
+
             card.innerHTML = `
 <div class="match-content">
 
     <div class="team team-left">
         <img src="${getFlag(match.teamA)}" class="team-logo" alt="${match.teamA}">
-        <span class="team-name">${match.teamA}</span>
+        <span class="team-name ${teamAClass}">${match.teamA}</span>
     </div>
 
     <div class="match-center">
@@ -143,7 +166,7 @@ async function loadMatches(day) {
 
     <div class="team team-right">
         <img src="${getFlag(match.teamB)}" class="team-logo" alt="${match.teamB}">
-        <span class="team-name">${match.teamB}</span>
+        <span class="team-name ${teamBClass}">${match.teamB}</span>
     </div>
 
 </div>
