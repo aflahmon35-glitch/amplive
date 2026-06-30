@@ -391,55 +391,55 @@ body {
 
 /* Match content layout */
 
-.match-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px;
-    position: relative;
+.match-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px;
+    gap:10px;
 }
 
-/* Teams */
-
-.team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    text-align: center;
+.team{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
-.team-logo {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-    margin-bottom: 6px;
+.match-center{
+    width:110px;
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 }
 
-.team-name {
-    font-size: 13px;
-    font-weight: 500;
+.team-logo{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+    margin-bottom:6px;
 }
 
-/* Center */
-
-.match-center {
-    width: 40%;
-    text-align: center;
+.team-name{
+    font-size:14px;
+    font-weight:600;
 }
 
-.match-time {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 6px;
+.match-time{
+    font-size:18px;
+    font-weight:700;
 }
 
-.status-badge {
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    background: #eee;
-    display: inline-block;
+.status-badge{
+    margin-top:6px;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
 }
 
 .status-badge.live {
@@ -530,37 +530,6 @@ body {
    TABLET ADJUSTMENTS
 ------------------------- */
 
-@media (max-width: 1024px) {
-
-    .container {
-        width: 85%;
-    }
-
-    .page-title {
-        font-size: 34px;
-    }
-
-    .match-content {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .team {
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .match-center {
-        width: 100%;
-    }
-
-    .match-footer {
-        flex-wrap: wrap;
-        text-align: center;
-    }
-}
 
 /* -------------------------
    MOBILE SMALL DEVICES
@@ -759,5 +728,38 @@ body {
 
     .team-name {
         font-size: 12px;
+    }
+}
+
+@media (max-width:768px){
+
+    .match-content{
+        padding:14px;
+    }
+
+    .team-logo{
+        width:34px;
+        height:34px;
+    }
+
+    .team-name{
+        font-size:12px;
+    }
+
+    .match-center{
+        width:90px;
+    }
+
+    .match-time{
+        font-size:16px;
+    }
+
+    .status-badge{
+        font-size:10px;
+        padding:3px 10px;
+    }
+
+    .match-footer{
+        font-size:11px;
     }
 }
