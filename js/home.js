@@ -127,9 +127,18 @@ async function loadMatches(day) {
     </div>
 
     <div class="match-center">
-        <div class="match-time">${formatTime(match.time)}</div>
-        <span class="status-badge ${match.status.toLowerCase()}">${match.status}</span>
-    </div>
+    <div class="match-time">${formatTime(match.time)}</div>
+
+    <span class="status-badge ${match.status.toLowerCase()}">
+        ${match.status}
+    </span>
+
+    ${
+        match.score
+            ? `<div class="match-score">${match.score}</div>`
+            : ""
+    }
+</div>
 
     <div class="team team-right">
         <img src="${getFlag(match.teamB)}" class="team-logo" alt="${match.teamB}">
