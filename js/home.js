@@ -172,8 +172,12 @@ if (match.score && match.score.includes("-")) {
 </div>
 
 <div class="match-footer">
-    <span>${match.competition}</span>
+    <span class="competition">
+        🏆 ${match.competition}
+    </span>
+
     <span>•</span>
+
     <span>${match.group}</span>
 </div>
 `;
