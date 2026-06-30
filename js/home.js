@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* -------------------------
        DATE SELECTOR
     ------------------------- */
-
     const dateButtons = document.querySelectorAll(".date-btn");
 
     dateButtons.forEach(btn => {
@@ -25,6 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const selectedDay = btn.getAttribute("data-day");
 
             console.log("Selected Day:", selectedDay);
+
+            function formatTime(time24) {
+
+    const [hour, minute] = time24.split(":");
+
+    let h = parseInt(hour, 10);
+
+    const ampm = h >= 12 ? "PM" : "AM";
+
+    h = h % 12;
+    if (h === 0) h = 12;
+
+    return `${h}:${minute} ${ampm}`;
+}
 
             // later: fetch matches based on selectedDay
             loadMatches(selectedDay);
@@ -56,6 +69,33 @@ async function loadMatches(day) {
 
         // 🔥 GET REAL DATA FROM FIREBASE
         const matches = await window.AMP_FIREBASE.getMatchesByDate(day);
+
+       matches.sort((a, b) => {
+
+    // Tomorrow & Yesterday
+    if (day !== "today") {
+        return a.time.localeCompare(b.time);
+    }
+
+    // Today
+    const priority = (status) => {
+
+        status = status.toUpperCase();
+
+        if (status === "LIVE") return 0;
+
+        if (status === "FT" || status === "FULL TIME") return 2;
+
+        return 1; // Upcoming
+    };
+
+    const p = priority(a.status) - priority(b.status);
+
+    if (p !== 0) return p;
+
+    return a.time.localeCompare(b.time);
+
+});
 
         container.innerHTML = "";
 
