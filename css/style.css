@@ -447,6 +447,14 @@ body {
     color: #fff;
 }
 
+.match-score{
+    margin-top:8px;
+    font-size:20px;
+    font-weight:700;
+    color:var(--text);
+    text-align:center;
+}
+
 /* Footer */
 
 .match-footer{
