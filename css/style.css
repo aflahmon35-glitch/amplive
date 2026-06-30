@@ -405,8 +405,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    min-width: 0;
+    width: 30%;
     text-align: center;
 }
 
@@ -419,16 +418,13 @@ body {
 
 .team-name {
     font-size: 13px;
-    font-weight: 600;
-    line-height: 1.25;
-    word-break: break-word;
+    font-weight: 500;
 }
 
 /* Center */
 
 .match-center {
-    width: 90px;
-    flex-shrink: 0;
+    width: 40%;
     text-align: center;
 }
 
@@ -757,63 +753,3 @@ body {
         font-size: 12px;
     }
 }
-
-/* ==========================================
-   MATCH CARD RESPONSIVE
-========================================== */
-
-@media (max-width:768px){
-
-    .match-content{
-        padding:14px;
-    }
-
-    .team-logo{
-        width:34px;
-        height:34px;
-    }
-
-    .team-name{
-        font-size:12px;
-    }
-
-    .match-time{
-        font-size:16px;
-    }
-
-    .status-badge{
-        font-size:10px;
-        padding:3px 8px;
-    }
-
-    .match-footer{
-        font-size:10px;
-        gap:6px;
-    }
-
-}
-
-@media (max-width:480px){
-
-    .match-content{
-        padding:12px;
-    }
-
-    .team-logo{
-        width:30px;
-        height:30px;
-    }
-
-    .team-name{
-        font-size:11px;
-    }
-
-    .match-time{
-        font-size:15px;
-    }
-
-}
-
-
-
-thsi is thje coded in css.style.  need 
