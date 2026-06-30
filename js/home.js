@@ -78,22 +78,23 @@ async function loadMatches(day) {
 
        matches.sort((a, b) => {
 
-    // Tomorrow & Yesterday
     if (day !== "today") {
         return a.time.localeCompare(b.time);
     }
 
-    // Today
-    const priority = (status) => {
+    function priority(status) {
 
-        status = status.toUpperCase();
+        switch (status.toUpperCase()) {
 
-        if (status === "LIVE") return 0;
+            case "LIVE": return 0;
+            case "HT":   return 1;
+            case "ET":   return 2;
+            case "PEN":  return 3;
+            case "FT":   return 5;
 
-        if (status === "FT" || status === "FULL TIME") return 2;
-
-        return 1; // Upcoming
-    };
+            default:     return 4; // UPCOMING
+        }
+    }
 
     const p = priority(a.status) - priority(b.status);
 
