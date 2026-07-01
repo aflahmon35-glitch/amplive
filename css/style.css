@@ -709,7 +709,8 @@ body {
     border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-[data-theme="dark"] .status-badge {
+/* Default badge in dark mode */
+[data-theme="dark"] .status-badge:not(.live):not(.ht):not(.et):not(.pen):not(.ft):not(.upcoming) {
     background: rgba(255,255,255,0.08);
     color: var(--text);
 }
