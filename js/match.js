@@ -39,10 +39,10 @@ if (!match) {
 
     } catch (err) {
 
-        console.error(err);
-        alert("Unable to load match.");
+    console.error("MATCH ERROR:", err);
+    alert(err.message);
 
-    }
+}
 
 });
 
