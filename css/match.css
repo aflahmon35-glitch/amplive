@@ -259,8 +259,7 @@
     }
 
     .stream-btn{
-    width:150%;
-    max-width:none;
+    width:100%;
 }
 
     .match-info p{
@@ -318,9 +317,4 @@
     margin-bottom:18px;
     color:var(--text);
     text-align:center;
-}
-
-.stream-btn{
-    margin-left:auto;
-    margin-right:auto;
 }
