@@ -92,19 +92,23 @@ switch (match.status.toUpperCase()) {
 // =============================
 
 const streamsContainer = document.getElementById("streamsContainer");
+const linksMessage = document.getElementById("linksMessage");
 
-// Hide by default
+// Hide everything initially
 streamsContainer.style.display = "none";
+linksMessage.style.display = "none";
 
-// Show only if linkavailable = "Y"
-if (match.linkavailable &&
-    match.linkavailable.toUpperCase() === "Y") {
+// Show links only if linkAvailable = Y
+if (
+    match.linkavailable &&
+    match.linkavailable.toUpperCase() === "Y"
+) {
 
     const links = await window.AMP_FIREBASE.getMatchLinks();
 
     if (links) {
 
-        streamsContainer.style.display = "grid";
+        streamsContainer.style.display = "flex";
         streamsContainer.innerHTML = "";
 
         Object.keys(links)
@@ -126,17 +130,13 @@ if (match.linkavailable &&
             });
 
     }
+
+} else {
+
+    // Show message instead of links
+    linksMessage.style.display = "block";
+
 }
-
-    } catch (err) {
-
-    console.error("MATCH ERROR:", err);
-    alert(err.message);
-
-}
-
-});
-
 /* =========================================================
    AMP LIVE - MATCH JS (Part 2)
    Stream Handling + Future Firebase Hooks
