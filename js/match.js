@@ -26,6 +26,9 @@ if (!match) {
 
         console.log("Match Loaded:", match);
 
+       console.log("linkavailable =", match.linkavailable);
+       console.log("linkAvailable =", match.linkAvailable);
+
         // Team names
         document.getElementById("teamA").textContent = match.teamA;
         document.getElementById("teamB").textContent = match.teamB;
