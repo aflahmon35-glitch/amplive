@@ -49,10 +49,20 @@ window.AMP_FIREBASE = {
     // Get single match
     getMatchById: async function (id) {
 
-        const doc = await db.collection("matches").doc(id).get();
+        getMatchById: async function (id) {
 
-        return doc.exists ? { id: doc.id, ...doc.data() } : null;
-    }
+    const doc = await db.collection("matches").doc(id).get();
+
+    return doc.exists ? { id: doc.id, ...doc.data() } : null;
+},
+
+// Get all live links
+getMatchLinks: async function () {
+
+    const doc = await db.collection("matchLinks").doc("current").get();
+
+    return doc.exists ? doc.data() : null;
+}
 
 };
 
