@@ -134,10 +134,11 @@
 ------------------------- */
 
 .streams{
+    .streams{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:15px;
+    justify-content:center;
 
     width:100%;
     margin:0 auto 40px;
@@ -154,8 +155,8 @@
 
     padding:14px 20px;
 
-    background:var(--card);
-    color:var(--text);
+    background: linear-gradient(135deg, #ff3b30, #d60000);
+    color:#fff;
 
     border-radius:12px;
     box-shadow:var(--shadow);
@@ -165,6 +166,8 @@
 
     transition:.25s;
 }
+
+   
 .stream-btn:hover{
     transform:translateY(-2px);
     color:var(--primary);
