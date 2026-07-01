@@ -17,17 +17,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
 
         // Load match document
-        const doc = await firebase.firestore()
-            .collection("matches")
-            .doc(matchId)
-            .get();
+        const match = await window.AMP_FIREBASE.getMatchById(matchId);
 
-        if (!doc.exists) {
-            alert("Match not found.");
-            return;
-        }
-
-        const match = doc.data();
+if (!match) {
+    alert("Match not found.");
+    return;
+}
 
         console.log("Match Loaded:", match);
 
