@@ -36,6 +36,50 @@ if (!match) {
        document.getElementById("teamBFlag").src = getFlag(match.teamB);
        document.getElementById("teamBFlag").alt = match.teamB;
 
+       // game status
+       const score = document.getElementById("matchScore");
+const status = document.getElementById("matchStatus");
+
+// Score
+if (match.score && match.score.trim() !== "") {
+    score.textContent = match.score;
+    score.style.display = "block";
+} else {
+    score.style.display = "none";
+}
+
+// Status
+status.textContent = match.status;
+
+// Badge colour
+status.className = "status-badge";
+
+switch (match.status.toUpperCase()) {
+
+    case "LIVE":
+        status.classList.add("live");
+        break;
+
+    case "HT":
+        status.classList.add("ht");
+        break;
+
+    case "ET":
+        status.classList.add("et");
+        break;
+
+    case "PEN":
+        status.classList.add("pen");
+        break;
+
+    case "FT":
+        status.classList.add("ft");
+        break;
+
+    default:
+        status.classList.add("upcoming");
+}
+
         // Match details
         document.getElementById("competition").textContent = match.competition;
         document.getElementById("group").textContent = match.group;
