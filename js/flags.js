@@ -54,7 +54,7 @@ const FLAG_MAP = {
     "United States": "us.png",
     "Uruguay": "uy.png",
     "Uzbekistan": "uz.png",
-   "Ivory Coast: "ic.png"
+   "Ivory Coast": "ci.png"
 
 };
 
