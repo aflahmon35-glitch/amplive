@@ -49,8 +49,6 @@ window.AMP_FIREBASE = {
     // Get single match
     getMatchById: async function (id) {
 
-        getMatchById: async function (id) {
-
     const doc = await db.collection("matches").doc(id).get();
 
     return doc.exists ? { id: doc.id, ...doc.data() } : null;
