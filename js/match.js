@@ -137,6 +137,16 @@ if (
     linksMessage.style.display = "block";
 
 }
+
+} catch (err) {
+
+    console.error("MATCH ERROR:", err);
+    alert(err.message);
+
+}
+
+});
+
 /* =========================================================
    AMP LIVE - MATCH JS (Part 2)
    Stream Handling + Future Firebase Hooks
