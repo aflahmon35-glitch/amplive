@@ -38,7 +38,7 @@ if (!match) {
 
        // game status
        const score = document.getElementById("matchScore");
-const status = document.getElementById("matchStatus");
+       const status = document.getElementById("matchStatus");
 
 // Score
 if (match.score && match.score.trim() !== "") {
@@ -86,6 +86,47 @@ switch (match.status.toUpperCase()) {
         document.getElementById("stadium").textContent = match.stadium;
         document.getElementById("date").textContent = match.date;
         document.getElementById("time").textContent = match.time;
+
+       // =============================
+// Load Live Links
+// =============================
+
+const streamsContainer = document.getElementById("streamsContainer");
+
+// Hide by default
+streamsContainer.style.display = "none";
+
+// Show only if linkavailable = "Y"
+if (match.linkavailable &&
+    match.linkavailable.toUpperCase() === "Y") {
+
+    const links = await window.AMP_FIREBASE.getMatchLinks();
+
+    if (links) {
+
+        streamsContainer.style.display = "grid";
+        streamsContainer.innerHTML = "";
+
+        Object.keys(links)
+            .sort()
+            .forEach(key => {
+
+                const url = links[key];
+
+                if (!url) return;
+
+                const btn = document.createElement("a");
+
+                btn.href = `watch.html?stream=${key}`;
+                btn.className = "stream-btn";
+                btn.textContent = key.replace("live", "Live ");
+
+                streamsContainer.appendChild(btn);
+
+            });
+
+    }
+}
 
     } catch (err) {
 
