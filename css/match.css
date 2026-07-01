@@ -173,55 +173,91 @@
 
 @media (max-width: 1024px) {
 
-    .match-header {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
+    .match-header{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
     }
 
-    .team-block {
-        width: 100%;
+    .team-block{
+        width:35%;
     }
 
-    .streams {
-        grid-template-columns: repeat(2, 1fr);
+    .match-middle{
+        width:30%;
+    }
+
+    .team-logo-large{
+        width:60px;
+        height:60px;
+    }
+
+    .team-block h2{
+        font-size:18px;
+    }
+
+    .streams{
+        grid-template-columns:repeat(2,1fr);
     }
 }
-
 /* -------------------------
    RESPONSIVE (MOBILE)
 ------------------------- */
 
 @media (max-width: 600px) {
 
-    .match-details {
-        padding: 25px 0;
+    .match-details{
+        padding:25px 0;
     }
 
-    .match-header {
-        padding: 18px;
+    .match-header{
+        padding:18px 12px;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        gap:8px;
     }
 
-    .team-logo-large {
-        width: 55px;
-        height: 55px;
+    .team-block{
+        width:35%;
     }
 
-    .vs {
-        font-size: 18px;
+    .match-middle{
+        width:30%;
     }
 
-    .streams {
-        grid-template-columns: repeat(1, 1fr);
+    .team-logo-large{
+        width:48px;
+        height:48px;
     }
 
-    .stream-btn {
-        font-size: 13px;
-        padding: 10px;
+    .team-block h2{
+        font-size:15px;
     }
 
-    .match-info p {
-        font-size: 13px;
+    .match-score{
+        font-size:24px;
+        margin-bottom:8px;
+    }
+
+    .vs{
+        font-size:16px;
+    }
+
+    .streams{
+        grid-template-columns:1fr;
+    }
+
+    .stream-btn{
+        font-size:13px;
+        padding:10px;
+    }
+
+    .match-info p{
+        font-size:13px;
     }
 }
 
