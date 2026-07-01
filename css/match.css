@@ -318,3 +318,11 @@
     color:var(--text);
     text-align:center;
 }
+
+.links-message{
+    text-align:center;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.6;
+    padding:20px 10px;
+}
