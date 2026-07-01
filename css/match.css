@@ -299,3 +299,22 @@
     font-weight:700;
     margin-bottom:12px;
 }
+
+/* -------------------------
+   LIVE LINKS CARD
+------------------------- */
+
+.streams-card{
+    background: var(--card);
+    padding:20px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    margin-bottom:25px;
+}
+
+.streams-card h3{
+    font-size:16px;
+    margin-bottom:18px;
+    color:var(--text);
+    text-align:center;
+}
