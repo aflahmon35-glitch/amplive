@@ -1,59 +1,55 @@
-
 /* =========================================================
    AMP LIVE - MATCH JS (Part 1)
-   Match Page Data Loader (Core Setup)
+   Load Match From Firestore
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-    /* -------------------------
-       PLACEHOLDER MATCH DATA
-       (Later replaced by Firebase / URL params)
-    ------------------------- */
+    // Get match ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const matchId = params.get("id");
 
-    const matchData = {
-        teamA: "Team A",
-        teamB: "Team B",
-        competition: "FIFA World Cup",
-        group: "Group A",
-        stadium: "Main Stadium",
-        date: "2026-06-27",
-        time: "20:00"
-    };
-
-    /* -------------------------
-       DOM ELEMENTS
-    ------------------------- */
-
-    const teamA = document.getElementById("teamA");
-    const teamB = document.getElementById("teamB");
-
-    const competition = document.getElementById("competition");
-    const group = document.getElementById("group");
-    const stadium = document.getElementById("stadium");
-    const date = document.getElementById("date");
-    const time = document.getElementById("time");
-
-    /* -------------------------
-       LOAD MATCH DATA INTO UI
-    ------------------------- */
-
-    function loadMatch() {
-
-        if (teamA) teamA.textContent = matchData.teamA;
-        if (teamB) teamB.textContent = matchData.teamB;
-
-        if (competition) competition.textContent = matchData.competition;
-        if (group) group.textContent = matchData.group;
-        if (stadium) stadium.textContent = matchData.stadium;
-        if (date) date.textContent = matchData.date;
-        if (time) time.textContent = matchData.time;
+    if (!matchId) {
+        alert("Match not found.");
+        return;
     }
 
-    loadMatch();
+    try {
+
+        // Load match document
+        const doc = await firebase.firestore()
+            .collection("matches")
+            .doc(matchId)
+            .get();
+
+        if (!doc.exists) {
+            alert("Match not found.");
+            return;
+        }
+
+        const match = doc.data();
+
+        console.log("Match Loaded:", match);
+
+        // Team names
+        document.getElementById("teamA").textContent = match.teamA;
+        document.getElementById("teamB").textContent = match.teamB;
+
+        // Match details
+        document.getElementById("competition").textContent = match.competition;
+        document.getElementById("group").textContent = match.group;
+        document.getElementById("stadium").textContent = match.stadium;
+        document.getElementById("date").textContent = match.date;
+        document.getElementById("time").textContent = match.time;
+
+    } catch (err) {
+
+        console.error(err);
+        alert("Unable to load match.");
+
+    }
 
 });
-
 
 /* =========================================================
    AMP LIVE - MATCH JS (Part 2)
