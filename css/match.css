@@ -151,7 +151,6 @@
 
     width:70%;
     max-width:800px;
-    min-height:52px;
 
     margin:0 auto;
 
@@ -168,11 +167,11 @@
 
     transition:.25s;
 }
-
    
 .stream-btn:hover{
     transform:translateY(-2px);
-    color:var(--primary);
+    filter:brightness(1.08);
+    color:#fff;
 }
 
 
