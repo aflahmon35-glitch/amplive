@@ -29,6 +29,12 @@ if (!match) {
         // Team names
         document.getElementById("teamA").textContent = match.teamA;
         document.getElementById("teamB").textContent = match.teamB;
+       
+       document.getElementById("teamAFlag").src = getFlag(match.teamA);
+       document.getElementById("teamAFlag").alt = match.teamA;
+       
+       document.getElementById("teamBFlag").src = getFlag(match.teamB);
+       document.getElementById("teamBFlag").alt = match.teamB;
 
         // Match details
         document.getElementById("competition").textContent = match.competition;
